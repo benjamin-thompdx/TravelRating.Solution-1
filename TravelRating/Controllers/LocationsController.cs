@@ -31,6 +31,12 @@ namespace TravelRating.Controllers
        _db.SaveChanges();
      }
 
+     [HttpGet("{id}")]
+     public ActionResult<Location> GetAction(int id)
+     {
+       return _db.Locations.FirstOrDefault(entry => entry.LocationId == id);
+     }
+
 
   }
 }

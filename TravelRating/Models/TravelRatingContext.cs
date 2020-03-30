@@ -11,6 +11,6 @@ namespace TravelRating.Models
       }
 
     public DbSet<Location> Locations { get; set; }
-    public DbSet<Experience> Experience { get; set; }
+    public DbSet<Experience> Experiences { get; set; }
   }
 }

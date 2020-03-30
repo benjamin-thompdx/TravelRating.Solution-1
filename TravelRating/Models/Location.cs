@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace TravelRating.Models
 {
   public class Location

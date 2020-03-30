@@ -37,6 +37,22 @@ namespace TravelRating.Controllers
        return _db.Locations.FirstOrDefault(entry => entry.LocationId == id);
      }
 
+     [HttpPut("{id}")]
+     public void Put(int id, [FromBody] Location location)
+     {
+       location.LocationId = id;
+       _db.Entry(location).State = EntityState.Modified;
+       _db.SaveChanges();
+     }
+
+     [HttpDelete("{id}")]
+     public void Delete(int id)
+     {
+       var locationToDelete = _db.Locations.FirstOrDefault(entry => entry.LocationId == id);
+       _db.Locations.Remove(locationToDelete);
+       _db.SaveChanges();
+     }
+
 
   }
 }
